@@ -67,9 +67,9 @@ import streamlit as st
 #              Config: LLM services, assistant language,...
 ####################################################################
 list_LLM_providers = [
-    ":rainbow[**OpenAI**]",
+    "**OpenAI**",
     "**Google Generative AI**",
-    ":hugging_face: **HuggingFace**",
+    "**HuggingFace**",
 ]
 
 dict_welcome_message = {
@@ -101,7 +101,7 @@ LOCAL_VECTOR_STORE_DIR = (
 ####################################################################
 st.set_page_config(page_title="Chat With Your Data")
 
-st.title("🤖 RAG chatbot")
+st.title("RAG chatbot")
 
 # API keys
 st.session_state.openai_api_key = ""
@@ -173,7 +173,7 @@ def sidebar_and_documentChooser():
 
     with st.sidebar:
         st.caption(
-            "🚀 A retrieval augmented generation chatbot powered by 🔗 Langchain, Cohere, OpenAI, Google Generative AI and 🤗"
+            "A retrieval augmented generation chatbot powered by Langchain, Cohere, OpenAI, Google Generative AI and Hugging Face"
         )
         st.write("")
 
@@ -238,7 +238,7 @@ def sidebar_and_documentChooser():
 
         st.write("\n\n")
         st.write(
-            f"ℹ _Your {st.session_state.LLM_provider} API key, '{st.session_state.selected_model}' parameters, \
+            f"_Your {st.session_state.LLM_provider} API key, '{st.session_state.selected_model}' parameters, \
             and {st.session_state.retriever_type} are only considered when loading or creating a vectorstore._"
         )
 
